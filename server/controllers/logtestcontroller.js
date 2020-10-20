@@ -4,7 +4,7 @@ var User = sequelize.import('../models/user');
 var LogTestModel = sequelize.import('../models/logtest');
 
 //GET ALL ITEMS FOR INDIVIDUAL USER
-router.get('/getall', function (req, res){
+router.get('/', function (req, res){
     var userid = req.user.id;
 
     LogTestModel
@@ -23,7 +23,7 @@ router.get('/getall', function (req, res){
 
 //CREATE WORKOUT LOG
 
-router.post('/create', function (req, res) {
+router.post('/', function (req, res) {
    let description = req.body.logtestdata.description;
    let definition = req.body.logtestdata.definition;
    let result = req.body.logtestdata.result;
@@ -68,7 +68,7 @@ router.get('/:id', function(req, res){
 
 //DELETE ITEM FOR INDIVIDUAL USER
 
-router.delete('/delete/:id', function (req, res){
+router.delete('/:id', function (req, res){
     var data = req.params.id;
     var userid = req.user.id;
 
@@ -87,7 +87,7 @@ router.delete('/delete/:id', function (req, res){
 
 //UPDATE ITEM FOR INDIVIDUAL USER
 
-router.put('/update/:id', function(req, res){
+router.put('/:id', function(req, res){
     var data = req.params.id;
     var userid = req.user.id;
 

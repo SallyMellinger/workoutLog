@@ -12,7 +12,7 @@ app.use(require('./middleware/headers'));
 app.use('/api/user', user);
 
 app.use(require('./middleware/validate-session'));
-app.use('/logtest', logTest)
+app.use('/log', logTest)
 
 app.listen(3001, function(){
     console.log('App is running')
